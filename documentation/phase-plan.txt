@@ -1,0 +1,71 @@
+
+:: Phase 1 [Baseline/MVP]
+Functionality - Rules
+	Story Building / Functionality - Rules - Identify Rules
+	Story Building / Functionality - Rules - Implementing Rules
+
+Functionality - Add Player Interactivity
+	
+Functionality - AI 
+	Functionality - AI - Other Players Act to Win
+
+GUI - Ascii Based
+	(Prototype) GUI - Text Based Field
+	GUI - Ascii Based Field
+	GUI - Menu Specification
+
+
+:: Phase 2 [Skill Update]
+Immersion - Individual 
+	Immersion - Make a Player
+	GUI - HUD - Vital Info
+	Functionality - Skill System (Morale)
+	Functionality - Broom Types
+	
+Immersion - Teams
+	Immersion - Make a Team
+
+
+:: Phase 3 [Hogwarts Era Update]
+Immersion - Multi-Team Based (Single League // Hogwarts)
+	Immersion - Pre-Generated Teams
+	Immersion - Season
+	Immersion - Champion Cup
+
+	Functionality - Fan Engagement
+
+
+:: Phase 4 [World Cup Update]
+Immersion - Multi-Team Based (Multi-League)
+	Immersion - Pre-Generated League (w/ Teams)
+	Immersion - World Cup
+
+Functionality - AI
+	Functionality - AI - Degree of Difficulty
+	Functionality - Plays / Attack Style / Defense Style
+
+:: Phase 5 [Story Update]
+Immersion - Story Mode
+	Research - Watch gameplay footage from old HP Quidditch game
+	Immersion - Story - "Pro Mode"
+		Start @ Hogwarts / Pick House
+		Move to Pro / Pick Team
+		Goal is to Win World Cup
+	GUI/Immersion - HUD - Player Avatar
+
+GUI - Sprite Based Field
+	
+
+:: Phase 6 [Quality of Life / Multiplayer Update]
+
+Functionality - Multiplayer
+
+
+
+
+
+
+
+
+
+

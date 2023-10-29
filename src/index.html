@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <title>Console</title>
+  </head>
+  <body>
+    <div id="console-container">
+      <button id="clear-button">🗑</button>
+
+      <div id="console" contenteditable="false">
+          <!-- Your non-editable console content goes here -->
+      </div>
+    </div>
+    <div id="button-container">
+        <button id="button1">silent</button>
+        <button id="button2">unknown</button>
+        <button id="button3">enigma</button>
+    </div>
+  </body>
+  <script src="./renderer.js"></script>
+</html>
