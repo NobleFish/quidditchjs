@@ -1,0 +1,101 @@
+Information:
+
+There are 7 players per team: the Keeper, the Seeker, three Chasers and two Beaters [One player is the captain, pro teams have a manager]
+
+There are 3 types of balls: a Quaffle, two Bludgers and the Golden Snitch
+
+Scoring the Quaffle grants 10 points
+Catching the snitch grants 150 points and ends game
+
+Bludgers fly around & will hit players
+
+A Quidditch pitch is typically in the shape of an oval, five hundred feet long and a hundred and eighty feet wide, with a small central circle of approximately two feet in diameter.
+
+At each end there are three hooped Goal posts of different heights, surrounded by a scoring area.
+	Equal Travel
+
+Only one Chaser is allowed in the scoring area at any given time
+
+Players can foul:
+	Blagging (Holding Broom)  (Holding)
+	Blatching (Intentially Colliding) [Ignored in favor of Tackle]
+	Blurting ( Locking Broom Handles ) (Holding)
+	Bumphing (Beater hits bludger toward crowd) [Ignored]
+	Cobbing ( Excessive Elbows ) [Ignored]
+	Flacking (Preventing a goal by going through the hoop) [Ignored / Prevented]
+	Haversacking (Carrying the quaffle through the goal) [Keeping]
+	Quafflepocking (Tampering with the Quaffle) [Ignored]
+	Snitchnip (Anyone other than Seeker touching the snitch) [Ignored]
+	Stooging (More than one chaser entering the scoring area) [Keeping]
+	
+Penalties are granted to other team for Foul : Single player starts at center line 1v1 keeper
+	
+:: INTENTIONAL CHANGES
+
+90 Minute Timer
+Play continues after snitch capture (single capture per game)
+
+In League { Wins grant +3, Draws +1, Loss +0 }
+
+
+Good Source:
+https://iamapotterhead.weebly.com/quidditch.html
+https://www.hp-lexicon.org/thing/quidditch/
+
+
+
+=======================================================================
+:: Gameplay Plans
+Games will take 90 minutes 
+Actions will take 6 seconds - 10 actions/minute - 900 actions/game
+Quaffle Score +10
+Snitch Score +150
+
+Game Grid will be (100 x 36) 5ft Square
+
+QuafflePlay
+-Chaser
+	When Holding
+		Throw
+			Pass (Aim @ Other Chaser)
+			Score (Aim @ Goal 1,2,3)
+
+	When Not Holding
+		Tackle
+			When within range of Opp Holding Chaser
+		Take Quaffle / Intercept *
+			When within range of Free Quaffle
+	Always
+		Move (? Towards/Away Quaffle, Towards/Away Goal, Anywhere?)
+		
+	Passive
+		(When being tackled) Evade
+		(When not holding ) Catch
+-Keeper
+	When Holding
+		Throw
+			Pass (Aim @ Chaser)
+	When Not Holding
+		Block 
+	Always
+		Move (Goal 1,2,3 or Center )
+		
+-Quaffle 
+		
+BludgerPlay		
+-Beater 
+	Protect Chaser
+	Move (Anywhere?)
+	Capture Bludger (within Range)
+	Launch Bludger (@ Other Player)
+		Stun
+
+- Bludger 
+	Bludgers are attracted to a point in the center of the field, when they hit that center they fly out in a random direction
+	
+SnitchPlay
+-Seeker 
+	Look for Snitch
+	
+-Snitch 
+	Moves around and does stuff

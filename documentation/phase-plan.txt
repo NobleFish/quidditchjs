@@ -3,9 +3,24 @@
 Functionality - Rules
 	Story Building / Functionality - Rules - Identify Rules
 	Story Building / Functionality - Rules - Implementing Rules
+	Gameplay - Implement Field (2d) (Rectangle)
+	Gameplay - Implement Field (2d) (Oval)
+	Gameplay - Implement Chaser actions
+	Gameplay - Implement Keeper actions	
+	Gameplay - Implement Turn Based Timer
+	Gameplay - Implement Score Counter
+	Gameplay - Implement Quaffle 
+	Gameplay - Implement Team 
+
+	Gameplay - Implement Beater actions
+	Gameplay - Implement Bludger
+
+	Gameplay - Implement Seeker actions
+	Gameplay - Implement Snitch
 
 Functionality - Add Player Interactivity
-	
+		
+
 Functionality - AI 
 	Functionality - AI - Other Players Act to Win
 
@@ -21,7 +36,9 @@ Immersion - Individual
 	GUI - HUD - Vital Info
 	Functionality - Skill System (Morale)
 	Functionality - Broom Types
-	
+
+Gameplay - Introduce Vector Based Movement	
+
 Immersion - Teams
 	Immersion - Make a Team
 
@@ -44,6 +61,8 @@ Functionality - AI
 	Functionality - AI - Degree of Difficulty
 	Functionality - Plays / Attack Style / Defense Style
 
+Functionality - Rules - Fouls
+
 :: Phase 5 [Story Update]
 Immersion - Story Mode
 	Research - Watch gameplay footage from old HP Quidditch game
@@ -61,9 +80,10 @@ GUI - Sprite Based Field
 Functionality - Multiplayer
 
 
-
-
-
+:: Phase 8 [Into Another Dimension Update]
+Functionality - 3D Field
+	Functionality - Player Movement in 3D
+	Functionality - Ball Movement in 3D
 
 
 
