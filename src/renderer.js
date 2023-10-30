@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(currmatch.getScores());
     });
 
+    document.getElementById("b6").addEventListener("click", function() {
+        currmatch.performRound();
+    });
     
 
 

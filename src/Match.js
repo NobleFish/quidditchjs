@@ -1,3 +1,5 @@
+import { Team } from "./Team.js";
+
 export const maxTime = 90 * 60;
 
 export const Teams = {
@@ -9,7 +11,17 @@ export class Match {
     
     constructor() {
       this.teamHomeScore = 0;
+      this.HomeTeam = new Team();
+      this.HomeTeam.addPlayer("HA");
+      this.HomeTeam.addPlayer("HB");
+      this.HomeTeam.addPlayer("HC");
+      
       this.teamAwayScore = 0;
+      this.AwayTeam = new Team();
+      this.AwayTeam.addPlayer("AA");
+      this.AwayTeam.addPlayer("AB");
+      this.AwayTeam.addPlayer("AC"); 
+
       // in seconds  
       this.currTime = 0;
       // 900 actions in a 90' game 
@@ -36,6 +48,16 @@ export class Match {
         }
     }
     
+    performRound(){
+        this.HomeTeam.players.forEach(this.logName);
+        this.AwayTeam.players.forEach(this.logName);
+        this.incrementTime();
+    }
+
+    logName(currentValue){
+        console.log(currentValue);
+    }
+
     scoreQuaffle(team){
         if(this.isMatchOver()){
             console.log("Cannot Score: Match is over");
