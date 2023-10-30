@@ -10,17 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const numCols = 100;
     // Define the element for the field/grid
     const fieldElement = document.getElementById('ascii-grid');
-    const currField = new AsciiGrid(numRows,numCols);
-
-    
-    // Update the grid (for example, placing 'X' at row 5, column 10)
-    currField.setCharacter(5, 10, 'O');
-
-    currField.renderAsciiGrid(fieldElement);
+    const currField = new AsciiGrid(numRows,numCols,fieldElement);
+    currField.renderAsciiGrid();
 
     const consoleDiv = document.getElementById('console');
     const input = document.getElementById('input');
 
+    // Function to write to console
     function logMessage(message) {
         const p = document.createElement('p');
         p.textContent = message;
@@ -29,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    // Function to clear console
     function clearConsole() {
         while (consoleDiv.firstChild) {
             consoleDiv.removeChild(consoleDiv.firstChild);
@@ -47,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function processCommand(command) {
         const cmdArr = command.split(/[ ,]+/);
         switch(cmdArr[0]){
-            case "getscore":
+            case "get_score":
                 let data = currmatch.getScores();
                 logMessage("Home: "+data.teamHomeScore+"- Away: "+data.teamAwayScore);
                 logMessage("Current Time:" + data.currentTime);
@@ -92,14 +89,30 @@ document.addEventListener("DOMContentLoaded", function () {
                         logMessage("time increment [optional:count]");
                 }
                 break;
-            case "nextRound":
+            case "next_round":
                 currmatch.performRound();
                 break;
+            case "write_character":
+                let success = false;
+                let char = '';
+                if(cmdArr[3] != null){
+                    char = cmdArr[3][0];
+                    success = currField.setCharacter(cmdArr[1], cmdArr[2], char);
+
+                }
+                if(success == true){
+                    logMessage("Character "+ char +" written to field");
+                }
+                else{
+                    logMessage("write_character [row] [col] [character]");
+                }
+                break;
             case "help":
-                logMessage("getscore");
+                logMessage("get_score");
                 logMessage("clear");
                 logMessage("time increment [optional:count]");
                 logMessage("score [quaffle|snitch] [H|A]");
+                logMessage("next_round")
                 break;
             default:
                 logMessage("Unknown command:" + command);
