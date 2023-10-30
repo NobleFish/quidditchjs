@@ -1,37 +1,117 @@
+import { AsciiGrid } from './AsciiGrid.js';
 import {Match,Teams} from './Match.js';
 
 document.addEventListener("DOMContentLoaded", function () {
     
     let currmatch = new Match();
 
-    document.getElementById("b1").addEventListener("click", function() {
-        currmatch.scoreQuaffle(Teams.Home);
-        console.log("New Home Score:" + currmatch.getScores().teamHomeScore);
-    });
+    // Define the dimensions of the grid (rows and columns)
+    const numRows = 36;
+    const numCols = 100;
+    // Define the element for the field/grid
+    const fieldElement = document.getElementById('ascii-grid');
+    const currField = new AsciiGrid(numRows,numCols);
 
-    document.getElementById("b2").addEventListener("click", function() {
-        currmatch.scoreQuaffle(Teams.Away);
-        console.log("New Away Score:" + currmatch.getScores().teamAwayScore);
-    });
+    
+    // Update the grid (for example, placing 'X' at row 5, column 10)
+    currField.setCharacter(5, 10, 'O');
 
-    document.getElementById("b3").addEventListener("click", function() {
-        currmatch.incrementTime();
-        console.log("New Time:" + currmatch.getScores().currentTime);
-    });
+    currField.renderAsciiGrid(fieldElement);
 
-    document.getElementById("b4").addEventListener("click", function() {
-        currmatch.incrementTimeMulti(890);
-        console.log("New Time:" + currmatch.getScores().currentTime);
-    });
+    const consoleDiv = document.getElementById('console');
+    const input = document.getElementById('input');
 
-    document.getElementById("b5").addEventListener("click", function() {
-        console.log(currmatch.getScores());
-    });
+    function logMessage(message) {
+        const p = document.createElement('p');
+        p.textContent = message;
+        consoleDiv.appendChild(p);
+        consoleDiv.scrollTop = consoleDiv.scrollHeight; // Scroll down to the bottom
 
-    document.getElementById("b6").addEventListener("click", function() {
-        currmatch.performRound();
+    }
+
+    function clearConsole() {
+        while (consoleDiv.firstChild) {
+            consoleDiv.removeChild(consoleDiv.firstChild);
+        }
+    }
+
+    // Function to handle user input
+    function handleInput() {
+        const command = input.value;
+        logMessage(`> ${command}`); // Display the entered command
+        processCommand(command); // Call the function with the entered command
+        input.value = ''; // Clear the input field
+    }
+
+    // Function to process the entered command
+    function processCommand(command) {
+        const cmdArr = command.split(/[ ,]+/);
+        switch(cmdArr[0]){
+            case "getscore":
+                let data = currmatch.getScores();
+                logMessage("Home: "+data.teamHomeScore+"- Away: "+data.teamAwayScore);
+                logMessage("Current Time:" + data.currentTime);
+                break;
+            case "clear":
+                clearConsole();
+                break;
+            case "score":
+                switch(cmdArr[1]){
+                    case "quaffle":
+                        switch(cmdArr[2]){
+                            case "H":
+                                currmatch.scoreQuaffle(Teams.Home);
+                                logMessage("New Home Score:" + currmatch.getScores().teamHomeScore);
+                                break;
+                            case "A":
+                                currmatch.scoreQuaffle(Teams.Away);
+                                logMessage("New Away Score:" + currmatch.getScores().teamAwayScore);
+                                break;
+                            default:
+                                logMessage("score [quaffle|snitch] [H|A]");
+                        }
+                    break;
+                    default:
+                        logMessage("score [quaffle|snitch] [H|A]");
+                }
+                break;
+            case "time":
+                switch(cmdArr[1]){
+                    case "increment":
+                        if(null != cmdArr[2]){
+                            currmatch.incrementTimeMulti(cmdArr[2])
+                            logMessage("New Time:" + currmatch.getScores().currentTime);
+                        }
+                        else{
+                            currmatch.incrementTime();
+                            logMessage("New Time:" + currmatch.getScores().currentTime);
+                                
+                        };
+                        break;
+                    default:
+                        logMessage("time increment [optional:count]");
+                }
+                break;
+            case "nextRound":
+                currmatch.performRound();
+                break;
+            case "help":
+                logMessage("getscore");
+                logMessage("clear");
+                logMessage("time increment [optional:count]");
+                logMessage("score [quaffle|snitch] [H|A]");
+                break;
+            default:
+                logMessage("Unknown command:" + command);
+            
+        }
+    }
+
+    // Listen for Enter key press in the input field
+    input.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter') {
+            handleInput();
+        }
     });
     
-
-
 });
