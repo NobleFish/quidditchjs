@@ -1,20 +1,25 @@
-.grid-container {
-    width: 720px; /* Set the width of the container as desired */
-    height: 504px; /* Set the height of the container as desired */
-    border: 1px solid #000; /* Add a border to the container */
-    overflow: auto; /* Add scrollbars if the content overflows the container */
-}
-
-pre {
-    font-family: monospace; /* Use a monospace font for ASCII art */
-    font-size: small;
-    margin: 0; /* Remove default margins */
-    background-color: darkolivegreen;
+canvas {
+    border: 1px solid #000;
 }
 
 #console {
-    width: 700px;
+    width: 800px;
+    margin-top: 5px;
     height: 100px;
     border: 1px solid #000;
     overflow: auto;
+    color:wheat;
+    background-color: rgb(10, 12, 6);
+    line-height: 0.1; /* Adjust the line-height as desired */
+    white-space: pre;
+}
+
+/* Set the width of the input field */
+#input {
+    width: 795px; /* Adjust the width as needed */
+}
+
+/* Set the font family to a monospaced font for the console elements */
+#console, #input, .message {
+    font-family: monospace;
 }
