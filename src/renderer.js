@@ -1,6 +1,6 @@
-import { AsciiCanvas } from './AsciiCanvas.js';
-import { CommandConsole } from './CommandConsole.js';
-import {Match,Teams} from './Match.js';
+import { AsciiCanvas } from './Engine/AsciiCanvas.js';
+import { CommandConsole } from './Engine/CommandConsole.js';
+import {Match,Teams} from './Quidditch/Match.js';
 
 document.addEventListener("DOMContentLoaded", function () {
     
