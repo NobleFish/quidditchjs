@@ -102,10 +102,10 @@ export class Engine{
                     canvasGrid.writeChar(0,99,'O','red');
                     return 0;
                 case "edgeNumbers":
-                    for(let i = 0; i < numRows; i++){
+                    for(let i = 0; i < canvasGrid.numRows; i++){
                         canvasGrid.writeChar(i,0,i%10,'red');    
                     }
-                    for(let i = 0; i < numCols; i++){
+                    for(let i = 0; i < canvasGrid.numCols; i++){
                         canvasGrid.writeChar(0,i,i%10,'red');
                     }
                     return 0;
